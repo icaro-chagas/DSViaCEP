@@ -9,8 +9,8 @@ function State() {
     
     this.inputCep = null;
     this.inputStreet = null;
-    this.number = null;
-    this.city = null;
+    this.inputNumber = null;
+    this.inputCity = null;
 
     this.errorCep = null;
     this.errorNumber = null;
@@ -23,7 +23,7 @@ export function init() {
     state.inputCep = document.forms.newAddress.cep;
     state.inputStreet = document.forms.newAddress.street;
     state.inputNumber = document.forms.newAddress.number;
-    state.city = document.forms.newAddress.city;
+    state.inputCity = document.forms.newAddress.city;
 
     state.btnSave = document.forms.newAddress.btnSave;
     state.btnClear = document.forms.newAddress.btnClear;
@@ -32,6 +32,7 @@ export function init() {
     state.errorNumber = document.querySelector('[data-error="number"]')
 
     state.inputNumber.addEventListener('change', handleInputNumberChange)
+    state.btnClear.addEventListener('click', handleBtnClearClick);
 
 }
 
@@ -44,7 +45,25 @@ function handleInputNumberChange(event) {
     } 
 }
 
+function handleBtnClearClick(event) {
+    event.preventDefault();
+    clearForm();
+    
+}
+
 function setFormerError(key, value) {
     const element = document.querySelector(`[data-error=${key}]`)
     element.innerHTML = value;
+}
+
+function clearForm() {
+    state.inputCep.value = "";
+    state.inputCity.value = "";
+    state.inputNumber.value = "";
+    state.inputStreet.value = "";
+
+    setFormerError("cep", "");
+    setFormerError("number", "");
+
+    state.inputCep.focus();
 }
