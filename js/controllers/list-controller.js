@@ -5,7 +5,6 @@ function State() {
 
 export function init() {
     State.listSection = document.querySelector("#list-section");
-    console.log(State.listSection);
 }
 
 export function addCard(address) {
@@ -37,8 +36,5 @@ function createCard(address) {
     <p class="address-line">${address.street}, ${address.number}</p>
     <p class="address-cep">${address.cep}</p>
     `
-
-    console.log(div)
-
     return div;
 }
