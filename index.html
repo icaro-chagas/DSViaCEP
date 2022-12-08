@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSViaCEP</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet" />
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -23,27 +25,30 @@
     </header>
 
     <main>
-        <section id="form_section">
-            <div>
+        <section id="form_section" class="form-container">
+            <div class="card-form">
                 <form name="newAddres">
-                    <div>
+                    <div class="form-control">
                         <label for="cep">CEP:</label>
-                        <input name="cep" id="cep" type="text" placeholder="CEP">
+                        <input name="cep" id="cep" class="form-input" type="text" placeholder="CEP">
+                        <div class="error-message">Campo requerido</div>
                     </div>
 
-                    <div>
+                    <div class="form-control">
                         <label for="street">Logradouro:</label>
-                        <input name="street" id="street" type="text" placeholder="Logradouro">
+                        <input name="street" id="street" class="form-input" type="text" placeholder="Logradouro"
+                            disabled>
                     </div>
 
-                    <div>
+                    <div class="form-control">
                         <label for="number">Número:</label>
-                        <input name="number" id="number" type="text" placeholder="Número">
+                        <input name="number" id="number" class="form-input" type="text" placeholder="Número">
+                        <div class="error-message">Campo requerido</div>
                     </div>
 
-                    <div>
+                    <div class="form-control">
                         <label for="city">Cidade:</label>
-                        <input name="city" id="city" type="text" placeholder="Cidade">
+                        <input name="city" id="city" class="form-input" type="text" placeholder="Cidade" disabled>
                     </div>
                 </form>
 
