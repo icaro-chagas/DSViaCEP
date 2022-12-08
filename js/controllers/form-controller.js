@@ -35,7 +35,9 @@ export function init() {
     state.inputNumber.addEventListener("keyup", handleInputNumberKeyup);
     state.btnClear.addEventListener("click", handleBtnClearClick);
     state.btnSave.addEventListener("click", handleBtnSaveClick);
+    state.inputCep.addEventListener("input", handleInputCepInvalid);
     state.inputCep.addEventListener("change", handleInputCepChange);
+    
 }
 
 function handleInputNumberKeyup(event) {
@@ -67,6 +69,11 @@ function handleInputNumberChange(event) {
     } else {
         setFormerError("number", "");
     }
+}
+
+function handleInputCepInvalid(event) {
+    const eventValue = event.target.value;
+    event.target.value = eventValue.replace(/[a-zA-Z]/, '').replace(/\W|_/g, '');
 }
 
 function handleBtnClearClick(event) {
